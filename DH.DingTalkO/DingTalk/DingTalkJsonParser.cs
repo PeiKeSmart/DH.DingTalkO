@@ -9,7 +9,7 @@ namespace Top.Api.Parser;
 /// <summary>
 /// TOP JSON响应通用解释器。
 /// </summary>
-public class TopJsonParser<T> : ITopParser<T> where T : TopResponse
+public class DingTalkJsonParser<T> : ITopParser<T> where T : TopResponse
 {
     private static readonly ReaderWriterLock rwLock = new ReaderWriterLock();
     private static readonly Dictionary<string, Dictionary<string, TopAttribute>> attrs = new Dictionary<string, Dictionary<string, TopAttribute>>();
@@ -28,18 +28,11 @@ public class TopJsonParser<T> : ITopParser<T> where T : TopResponse
         IDictionary json = JSON.Parse(body) as IDictionary;
         if (json != null)
         {
-            IDictionary data = null;
-
-            // 忽略根节点的名称
-            foreach (object key in json.Keys)
-            {
-                data = json[key] as IDictionary;
-                break;
-            }
+            IDictionary data = json;
 
             if (data != null)
             {
-                ITopReader reader = new TopJsonReader(data);
+                ITopReader reader = new TopSimplifyJsonReader(data);
                 rsp = (T)FromJson(reader, type);
             }
         }

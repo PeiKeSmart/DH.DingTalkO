@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Xml;
 
+using FastJSON;
+
 using Top.Api;
 using Top.Api.DingTalk;
 using Top.Api.Parser;
