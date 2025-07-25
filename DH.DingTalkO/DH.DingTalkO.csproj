@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net9.0</TargetFrameworks>
-    <RootNamespace>DH.DingTalk</RootNamespace>
+    <RootNamespace>DingTalk</RootNamespace>
     <AssemblyTitle>DingTalk钉钉旧版服务端API库</AssemblyTitle>
     <Description>基于DH框架的DingTalk钉钉旧版服务端API库</Description>
     <Company>湖北登灏科技有限公司</Company>
